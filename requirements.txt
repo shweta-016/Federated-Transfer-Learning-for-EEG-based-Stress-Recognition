@@ -1,0 +1,13 @@
+flask
+numpy
+pandas
+matplotlib
+scipy
+scikit-learn
+torch
+torchvision
+torchaudio
+flwr
+tqdm
+reportlab
+gunicorn
