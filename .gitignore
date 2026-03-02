@@ -16,4 +16,5 @@ static/eeg_plot.png
 *.pdf
 
 # History
+
 .history/
