@@ -1,0 +1,19 @@
+# Large datasets & models
+data/
+SAM-40/
+normalized_epochs/
+server_saved_models/
+splits/
+history/
+evaluation_results/
+
+# Environment
+eegenv/
+__pycache__/
+
+# Generated files
+static/eeg_plot.png
+*.pdf
+
+# History
+.history/
