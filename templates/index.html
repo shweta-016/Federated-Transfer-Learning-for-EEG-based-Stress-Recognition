@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EEG Stress Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
 
+<header class="hero">
+    <h1>EEG-Based Stress Recognition</h1>
+    <p>Federated Transfer Learning for stress Detection</p>
+</header>
+
+<section class="about">
+    <h2>About the Project</h2>
+    <p>
+        This system detects stress from EEG signals using Federated Transfer Learning.
+        The approach preserves subject privacy while improving cross-subject performance.
+    </p>
+</section>
+
+<section class="upload">
+    <h2>Stress Prediction</h2>
+
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Predict Stress</button>
+    </form>
+
+    {% if prediction %}
+<div class="result {{ 'stress' if prediction=='Stress' else 'nonstress' }}">
+    Prediction: {{ prediction }}
+</div>
+
+<div class="percent">
+    Stress: <b>{{ stress_pct }}%</b> |
+    Non-Stress: <b>{{ nonstress_pct }}%</b>
+</div>
+
+<a class="download-btn" href="/download_report?result={{ prediction }}&stress={{ stress_pct }}">
+    <button>Download Report</button>
+</a>
+{% endif %}
+    
+    {% if eeg_plot %}
+<div class="eeg">
+    <h3>EEG Signal Visualization</h3>
+    <img src="{{ url_for('static', filename=eeg_plot) }}" alt="EEG Plot">
+    <p class="eeg-info">
+        EEG signals vary across individuals due to differences in brain activity,
+        electrode placement, and mental state. In this demo, signals are simulated
+        using sinusoidal waves with varying frequency: higher frequency represents
+        stress, while smoother alpha-range waves represent relaxed state.
+    </p>
+</div>
+{% endif %}
+
+
+<section class="features">
+    <h2>Key Features</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Privacy Preserving</h3>
+            <p>Federated learning keeps EEG data local.</p>
+        </div>
+        <div class="card">
+            <h3>Transfer Learning</h3>
+            <p>Adapts model across subjects.</p>
+        </div>
+        <div class="card">
+            <h3>Deep EEGNet</h3>
+            <p>Extracts spatial–temporal EEG features.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>EEG-Based Stress Recognition using Federated Transfer Learning</p>
+    <p>© 2026 Shweta Jadhav • Final Year Engineering Project</p>
+</footer>
+
+</body>
+</html>
