@@ -4,9 +4,9 @@ Traditional stress detection systems require centralized data collection, which 
 
 The system processes EEG signals, extracts important features, and classifies stress levels into different categories such as stressed and not stressed using deep learning models.
 # Key Features
--EEG signal preprocessing and feature extraction
--Stress classification using Deep Learning
--Federated Learning for privacy-preserving training
--Transfer Learning for improved accuracy and faster training
--Decentralized model training without sharing raw EEG data
--Performance evaluation using Accuracy, Precision, Recall, and F1-score
+EEG signal preprocessing and feature extraction
+Stress classification using Deep Learning
+Federated Learning for privacy-preserving training
+Transfer Learning for improved accuracy and faster training
+Decentralized model training without sharing raw EEG data
+Performance evaluation using Accuracy, Precision, Recall, and F1-score
